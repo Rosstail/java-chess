@@ -7,7 +7,14 @@ import fr.rphstudio.chess.interf.OutOfBoardException;
 import java.util.List;
 
 public class ChessModel implements IChess {
+    public static ChessModel instance = new ChessModel();
+    private ChessModel() {
 
+    }
+
+    public static ChessModel getInstance() {
+        return ChessModel.instance;
+    }
 
     @Override
     public void reinit() {
