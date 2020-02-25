@@ -9,8 +9,9 @@ import java.util.List;
 
 public class ChessModel implements IChess {
     public static ChessModel instance = new ChessModel();
+    private Board board;
     private ChessModel() {
-
+        reinit();
     }
 
     public static ChessModel getInstance() {
@@ -22,21 +23,31 @@ public class ChessModel implements IChess {
 
     @Override
     public void reinit() {
-
+        this.board = new Board();
     }
 
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
 
-        Piece titi = new Piece(ChessType.TYP_PAWN, ChessColor.CLR_WHITE);
-        return titi.getType();
+        Piece titi = board.getPiece(p);
+        if (titi != null) {
+            return titi.getType();
+        }
+        else {
+            throw new EmptyCellException();
+        }
     }
 
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
 
-        Piece toto = new Piece(ChessType.TYP_PAWN, ChessColor.CLR_BLACK);
-        return toto.getColor();
+        Piece titi = board.getPiece(p);
+        if (titi != null) {
+            return titi.getColor();
+        }
+        else {
+            throw new EmptyCellException();
+        }
     }
 
     @Override

@@ -4,35 +4,59 @@ import fr.rphstudio.chess.interf.IChess;
 
 public class Board {
 
-    public void defaultBoard(){
-        int A;
-        int B;
+    private Piece[][] piece = new Piece[8][8];
 
+    public Piece getPiece(IChess.ChessPosition p) {
+        return piece[p.x][p.y];
+    }
+
+    /**
+     * Set the all the pieces on the board before the start of the game
+     */
+    public Board(){
+        IChess.ChessType type;
+        IChess.ChessColor color;
+
+        /**
+         * J represents the LINES
+         */
         for (int j = 0; j <= 7; j++) {
+            /**
+             * Determine the color depending of the LINE
+             */
             if (j <= 3) {
-                System.out.println("BLANC");
+                color = IChess.ChessColor.CLR_BLACK;
             }
             else {
-                System.out.println("NOIR");
+                color = IChess.ChessColor.CLR_WHITE;
             }
+            /**
+             * I represents the COLUMNS
+             */
             for (int i = 0; i <= 7; i++)
             {
+                /**
+                 * SET the TYPE as PAWN if the unit are in the nearest LINES of their enemies
+                 */
                 if (j == 1 || j == 6 ) {
-                    System.out.println("TROUFION");
-                    //CREER LA PIECE
+                    type = IChess.ChessType.TYP_PAWN;
+                    piece[i][j] = new Piece(type, color);
                 }
+                /**
+                 * SET the TYPE of the graded pieces depending of the COLUMN if they are on the extrem LINES
+                 */
                 else if (j == 0 || j == 7) {
                     if (i == 0 || i == 7)
-                        System.out.println("TOUR");
+                        type = IChess.ChessType.TYP_ROOK;
                     else if (i == 1 || i == 6)
-                        System.out.println("CAVALIER");
+                        type = IChess.ChessType.TYP_KNIGHT;
                     else if (i == 2 || i == 5)
-                        System.out.println("FOU");
+                        type = IChess.ChessType.TYP_BISHOP;
                     else if (i == 4)
-                        System.out.println("REINE");
+                        type = IChess.ChessType.TYP_QUEEN;
                     else
-                        System.out.println("ROI");
-                    //CREER LA PIECE
+                        type = IChess.ChessType.TYP_KING;
+                    piece[i][j] = new Piece(type, color);
                 }
             }
         }
