@@ -10,6 +10,9 @@ public class Board {
         return piece[p.x][p.y];
     }
 
+    public Piece getPiece(int x, int y) {
+        return piece[x][y];
+    }
     /**
      * Set the all the pieces on the board before the start of the game
      */
@@ -60,5 +63,21 @@ public class Board {
                 }
             }
         }
+    }
+
+    public int countPieces(IChess.ChessColor color) {
+        int count = 0;
+        Piece piece;
+        for (int j = 0; j <= 7; j++) {
+            for (int i = 0; i <= 7; i++) {
+                piece = getPiece(i, j);
+                if (piece != null) {
+                    if (piece.getColor() == color) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
     }
 }
