@@ -14,6 +14,9 @@ public class ChessModel implements IChess {
     }
 
     public static ChessModel getInstance() {
+        if (instance == null)
+            instance = new ChessModel();
+
         return ChessModel.instance;
     }
 
@@ -24,12 +27,12 @@ public class ChessModel implements IChess {
 
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessType.TYP_BISHOP;
+        return ChessType.TYP_PAWN;
     }
 
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessColor.CLR_BLACK;
+        return ChessColor.CLR_WHITE;
     }
 
     @Override
