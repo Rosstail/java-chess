@@ -13,7 +13,10 @@ public class Board {
      * @return
      */
     public Piece getPiece(IChess.ChessPosition p) {
-        return piece[p.x][p.y];
+        if ( (p.x >= 0 && p.y >= 0) && (p.x <= 7 && p.y <= 7) ) {
+            return piece[p.x][p.y];
+        }
+        return null;
     }
 
     /**
@@ -24,7 +27,10 @@ public class Board {
      * @return
      */
     public Piece getPiece(int x, int y) {
-        return piece[x][y];
+        if (x >= 0 && y >= 0 && x <= 7 && y <= 7) {
+            return piece[x][y];
+        }
+        return null;
     }
 
     /**
