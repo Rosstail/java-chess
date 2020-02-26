@@ -6,10 +6,23 @@ public class Board {
 
     private Piece[][] piece = new Piece[8][8];
 
+    /**
+     * Return the position of the selected piece.
+     * MUST BE FIXED: CLICK OUT THE BOARD MAKE A CRACH BECAUSE OoB EXCEPTIONS
+     * @param p
+     * @return
+     */
     public Piece getPiece(IChess.ChessPosition p) {
         return piece[p.x][p.y];
     }
 
+    /**
+     * Return the position of the selected piece.
+     * MUST BE FIXED: CLICK OUT THE BOARD MAKE A CRACH BECAUSE OoB EXCEPTIONS
+     * @param x
+     * @param y
+     * @return
+     */
     public Piece getPiece(int x, int y) {
         return piece[x][y];
     }
