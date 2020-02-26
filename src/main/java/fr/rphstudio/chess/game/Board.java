@@ -13,6 +13,7 @@ public class Board {
     public Piece getPiece(int x, int y) {
         return piece[x][y];
     }
+
     /**
      * Set the all the pieces on the board before the start of the game
      */
@@ -65,12 +66,24 @@ public class Board {
         }
     }
 
+    /**
+     * Count the number of piecies for a specific color
+     * @param color
+     * @return
+     */
     public int countPieces(IChess.ChessColor color) {
         int count = 0;
         Piece piece;
+        /**
+         * Checking every cases of the board
+         */
         for (int j = 0; j <= 7; j++) {
             for (int i = 0; i <= 7; i++) {
                 piece = getPiece(i, j);
+
+                /**
+                 * Avoid errors
+                 */
                 if (piece != null) {
                     if (piece.getColor() == color) {
                         count++;

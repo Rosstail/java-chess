@@ -10,6 +10,7 @@ import java.util.List;
 public class ChessModel implements IChess {
     public static ChessModel instance = new ChessModel();
     private Board board;
+
     private ChessModel() {
         reinit();
     }
@@ -50,14 +51,24 @@ public class ChessModel implements IChess {
         }
     }
 
+    /**
+     * Get the number of pieces with the specified color
+     * @param color the requested color of the pieces to count.
+     * @return
+     */
     @Override
     public int getNbRemainingPieces(ChessColor color) {
         int count = board.countPieces(color);
         return count;
     }
 
+
     @Override
     public List<ChessPosition> getPieceMoves(ChessPosition p) {
+        Piece piece = board.getPiece(p);
+        if (piece != null) {
+            return piece.getMovement(board, p);
+        }
         return new ArrayList<>();
     }
 
