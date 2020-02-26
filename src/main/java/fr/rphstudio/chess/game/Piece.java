@@ -40,7 +40,14 @@ public class Piece {
         return this.chessColor;
     }
 
+    /**
+     * Check the possible positions for a specified piece
+     * @param board
+     * @param position
+     * @return
+     */
     public List<IChess.ChessPosition> getMovement(Board board, IChess.ChessPosition position) {
         return move.getPossibleMove(board, position);
     }
+
 }

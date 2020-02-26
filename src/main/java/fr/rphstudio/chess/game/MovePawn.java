@@ -21,4 +21,5 @@ public class MovePawn implements IMove {
 
         return list;
     }
+
 }

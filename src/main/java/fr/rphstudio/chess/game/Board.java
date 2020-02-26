@@ -93,4 +93,13 @@ public class Board {
         }
         return count;
     }
+
+    /**
+     * Move the selected piece to the destination clicked
+     */
+    public void doMovement(IChess.ChessPosition start, IChess.ChessPosition dest) {
+        this.piece[dest.x][dest.y] = this.piece[start.x][start.y];
+        this.piece[start.x][start.y] = null;
+    }
+
 }
