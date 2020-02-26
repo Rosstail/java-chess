@@ -21,7 +21,12 @@ public class Piece {
     public Piece(IChess.ChessType type, IChess.ChessColor color) {
         this.chessType = type;
         this.chessColor = color;
-        this.move = new MovePawn();
+        switch (type) {
+            case TYP_KING: this.move = new MoveKing();
+                            break;
+            default: this.move = new MovePawn();
+                        break;
+        }
     }
 
     /**
