@@ -13,14 +13,14 @@ public class MoveKnight implements IMove {
         List<IChess.ChessPosition> list = new ArrayList<>();
         IChess.ChessPosition nextPosition = null;
 
-/**
- *  |||  |||  |||
- *  |||  |||  |||
- *  |||  |||  |||
- *  |||  |||  |||
- *  |||  |||  |||
- *    |||||||||
- */
+        /**
+         *  |||  |||  |||
+         *  |||  |||  |||
+         *  |||  |||  |||
+         *  |||  |||  |||
+         *  |||  |||  |||
+         *    |||||||||
+         */
         /**
          * TOP
          */

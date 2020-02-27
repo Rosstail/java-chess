@@ -20,6 +20,7 @@ public class MoveKing implements IMove {
          *  |||  |||  |||
          *  |||  |||  |||
          *  |||  |||  |||
+         *  |||  |||  |||
          *    |||||||||
          */
         nextPosition = new IChess.ChessPosition(position.x - 1, position.y - 1);

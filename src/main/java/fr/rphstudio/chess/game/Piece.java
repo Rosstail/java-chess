@@ -11,6 +11,7 @@ public class Piece {
      */
     private ChessModel.ChessType chessType;
     private ChessModel.ChessColor chessColor;
+    //private ChessModel.ChessNumbMove chessNumbMove;
     private IMove move;
 
     /**
@@ -62,5 +63,4 @@ public class Piece {
     public List<IChess.ChessPosition> getMovement(Board board, IChess.ChessPosition position) {
         return move.getPossibleMove(board, position);
     }
-
 }

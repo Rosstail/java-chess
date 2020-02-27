@@ -119,6 +119,16 @@ public class Board {
     public void doMovement(IChess.ChessPosition start, IChess.ChessPosition dest) {
         this.piece[dest.x][dest.y] = this.piece[start.x][start.y];
         this.piece[start.x][start.y] = null;
+
+
+        if ((dest.y == 0 || dest.y == 7 ) && getPiece(dest).getType() == IChess.ChessType.TYP_PAWN) {
+            IChess.ChessType type;
+            IChess.ChessColor color;
+
+            type = IChess.ChessType.TYP_QUEEN;
+            color = getPiece(dest).getColor();
+            piece[dest.x][dest.y] = new Piece(type, color);
+        }
     }
 
 }
