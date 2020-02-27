@@ -24,6 +24,12 @@ public class Piece {
         switch (type) {
             case TYP_KING: this.move = new MoveKing();
                             break;
+            case TYP_QUEEN: this.move = new MoveQueen();
+                            break;
+            case TYP_BISHOP: this.move = new MoveBishop();
+                break;
+            case TYP_ROOK: this.move = new MoveRook();
+                            break;
             default: this.move = new MovePawn();
                         break;
         }
