@@ -38,6 +38,23 @@ public class MovePawn implements IMove {
         }
 
         /**
+         * CHARGE MOVEMENT
+         */
+        nextPosition = new IChess.ChessPosition(position.x, position.y - 2);
+        if (position.y == 6 && board.getPiece(position).getColor() == IChess.ChessColor.CLR_WHITE && (nextPosition.x >= 0 && nextPosition.y >= 0) && (nextPosition.x <= 7 && nextPosition.y <= 7)) {
+            if (board.getPiece(nextPosition) == null) {
+                list.add(nextPosition);
+            }
+        }
+
+        nextPosition = new IChess.ChessPosition(position.x, position.y + 2);
+        if (position.y == 1 && board.getPiece(position).getColor() == IChess.ChessColor.CLR_BLACK && (nextPosition.x >= 0 && nextPosition.y >= 0) && (nextPosition.x <= 7 && nextPosition.y <= 7)) {
+            if (board.getPiece(nextPosition) == null) {
+                list.add(nextPosition);
+            }
+        }
+
+        /**
          * TAKING ANOTHER PIECE
          */
         nextPosition = new IChess.ChessPosition(position.x - 1, position.y - 1);
