@@ -28,6 +28,8 @@ public class Piece {
                             break;
             case TYP_BISHOP: this.move = new MoveBishop();
                 break;
+            case TYP_KNIGHT: this.move = new MoveKnight();
+                break;
             case TYP_ROOK: this.move = new MoveRook();
                             break;
             default: this.move = new MovePawn();
