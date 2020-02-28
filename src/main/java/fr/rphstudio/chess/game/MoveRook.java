@@ -13,13 +13,18 @@ public class MoveRook implements IMove {
         List<IChess.ChessPosition> list = new ArrayList<>();
         IChess.ChessPosition nextPosition = null;
 
+
+        /**
+         * Return every possibilities of moves for every rooks
+         * ATM WORKS FOR EVERYTHING, MUST BE CHANGED.
+         * @param board
+         * @param position
+         * @return
+         */
         /**
          * PREPARE THE MOVES FOR WHITE
          */
         if (board.getPiece(position).getColor() == IChess.ChessColor.CLR_WHITE) {
-            /**
-             * TEST
-             */
 
             nextPosition = new IChess.ChessPosition(position.x, position.y + 1);
 
@@ -76,7 +81,7 @@ public class MoveRook implements IMove {
         }
 
         /**
-         * PREPARE THE MOVES FOR WHITE
+         * PREPARE THE MOVES FOR NIGGAS
          */
         if (board.getPiece(position).getColor() == IChess.ChessColor.CLR_BLACK) {
 

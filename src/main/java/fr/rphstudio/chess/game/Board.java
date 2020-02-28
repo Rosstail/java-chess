@@ -75,7 +75,7 @@ public class Board {
                         type = IChess.ChessType.TYP_KNIGHT;
                     else if (i == 2 || i == 5)
                         type = IChess.ChessType.TYP_BISHOP;
-                    else if (i == 4)
+                    else if (i == 3)
                         type = IChess.ChessType.TYP_QUEEN;
                     else
                         type = IChess.ChessType.TYP_KING;
@@ -121,6 +121,9 @@ public class Board {
         this.piece[start.x][start.y] = null;
 
 
+        /**
+         * Check if piece is at the start/end of lines and is pawn to convert as a queen
+         */
         if ((dest.y == 0 || dest.y == 7 ) && getPiece(dest).getType() == IChess.ChessType.TYP_PAWN) {
             IChess.ChessType type;
             IChess.ChessColor color;

@@ -7,6 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MoveQueen implements IMove {
+
+    /**
+     * Return every possibilities of moves for every Queens
+     * ATM WORKS FOR EVERYTHING, MUST BE CHANGED.
+     * @param board
+     * @param position
+     * @return
+     */
+
     @Override
     public List<IChess.ChessPosition> getPossibleMove(Board board, IChess.ChessPosition position) {
 

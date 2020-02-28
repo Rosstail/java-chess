@@ -9,7 +9,7 @@ import java.util.List;
 public class MovePawn implements IMove {
 
     /**
-     * Return every possibilities of moves for every pieces
+     * Return every possibilities of moves for every pawns
      * ATM WORKS FOR EVERYTHING, MUST BE CHANGED.
      * @param board
      * @param position
